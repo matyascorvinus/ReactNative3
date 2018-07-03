@@ -83,8 +83,8 @@ export const doTurn = (gameState) => {
   			lordOfLevelValue(bombsArray[i].x,(bombsArray[i].y+2+31)%31,bombsArray[i].timer);
   			lordOfLevelValue((bombsArray[i].x-1+31)%31,(bombsArray[i].y-1+31)%31,bombsArray[i].timer);
   			lordOfLevelValue((bombsArray[i].x+1+31)%31,(bombsArray[i].y-1+31)%31,bombsArray[i].timer);
-  			lordOfLevelValue((bombsArray[i].x-1+31)%31,(bombsArray[i].y-1+31)%31,bombsArray[i].timer);
-  			lordOfLevelValue((bombsArray[i].x+1+31)%31,(bombsArray[i].y-1+31)%31,bombsArray[i].timer);
+  			lordOfLevelValue((bombsArray[i].x-1+31)%31,(bombsArray[i].y+1+31)%31,bombsArray[i].timer);
+  			lordOfLevelValue((bombsArray[i].x+1+31)%31,(bombsArray[i].y+1+31)%31,bombsArray[i].timer);
   		}
   	}
   	
@@ -141,6 +141,7 @@ export const doTurn = (gameState) => {
   			   			return Directions.UP;
   			   		}
 			   }
+
 			   break;
   		case 2:if (valueBoard[(playerX + 1 + 31) % 31][playerY] == 0) return Directions.RIGHT;
       		   if (valueBoard[(playerX - 1 + 31) % 31][playerY] == 0) return Directions.LEFT;
@@ -153,6 +154,6 @@ export const doTurn = (gameState) => {
 			   break;
 		default:break;
   	}
-  
+  return Directions.STAY;
 
 }
