@@ -7,7 +7,7 @@ export default class App extends React.Component {
       <View style={styleEmpire.container}>
           <Text style = {styleEmpire.headerFont}>Galactic Schedule</Text>                                                           
 
-          <Image style={{width: 200, height: 200}}  source = {require ('/StarWars_Football_Matches/800px-Flag_of_the_First_Galactic_Empire.svg.png')}/>
+          <Image style={{width: 200, height: 200}}  source = {require ('/StarWars_Football_Matches_UI/800px-Flag_of_the_First_Galactic_Empire.svg.png')}/>
           <Text style = {styleEmpire.headerFont1}>Emperor's World Cup</Text>   
 
           <View style = {styleEmpire.bigMatch}> 
@@ -15,9 +15,9 @@ export default class App extends React.Component {
                     <Text style = {styleEmpire.timer}> July 1st 4ABY </Text>
                     <View style = {styleEmpire.teams} >
                       <Text style = {styleEmpire.normalFont}> The Empire </Text>
-                      <Image style= {{width:20, height:20}} source = {require ('/StarWars_Football_Matches/240px-Emblem_of_the_First_Galactic_Empire.svg.png')}/>
+                      <Image style= {{width:20, height:20}} source = {require ('/StarWars_Football_Matches_UI/240px-Emblem_of_the_First_Galactic_Empire.svg.png')}/>
                       
-                      <Image style= {{width:20, height:20}} source = {require ('/StarWars_Football_Matches/Rebel_Alliance_logo.svg.png')}/>
+                      <Image style= {{width:20, height:20}} source = {require ('/StarWars_Football_Matches_UI/Rebel_Alliance_logo.svg.png')}/>
                       <Text style = {styleEmpire.normalFont}> Rebel Alliance </Text>
                     </View>
               </View>
@@ -32,9 +32,9 @@ export default class App extends React.Component {
                       <Text style = {styleEmpire.timer}> July 2st 4ABY </Text>
                       <View style = {styleEmpire.teams} >
                         <Text style = {styleEmpire.normalFont}> Darth Vader </Text>
-                        <Image style= {{width:20, height:20}} source = {require ('/StarWars_Football_Matches/darth_vader_PNG14.png')}/>
+                        <Image style= {{width:20, height:20}} source = {require ('/StarWars_Football_Matches_UI/darth_vader_PNG14.png')}/>
                         
-                        <Image style= {{width:20, height:20}} source = {require ('/StarWars_Football_Matches/Darth_Sidious_Render.png')}/>
+                        <Image style= {{width:20, height:20}} source = {require ('/StarWars_Football_Matches_UI/Darth_Sidious_Render.png')}/>
                         <Text style = {styleEmpire.normalFont}> Darth Sidious </Text>
                     </View>
               </View>
@@ -78,7 +78,7 @@ const styleEmpire = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-around',
-   
+    borderRadius: 10,
   }, 
   bigMatch:
   {
