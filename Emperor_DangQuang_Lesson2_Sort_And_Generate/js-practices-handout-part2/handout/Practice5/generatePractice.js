@@ -1,6 +1,11 @@
 'use strict'
 
 function generate(testLengthArray) {
+	[1.2.3.4.5.6]
+	[a,b,c,d,e,f]
+	a{
+		input: 1//random -10000->10000
+	}
   // return testLengthArray.map(elem=>randomObject(elem))//two failures
 
   return testLengthArray.length < 4 ? testLengthArray.map(elem => randomObject(elem))
