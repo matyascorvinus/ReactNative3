@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, AppRegistry} from 'react-native';
+import SuperComponent from './SuperComponent';
 
 export default class App extends React.Component {
   render() {
@@ -7,42 +8,21 @@ export default class App extends React.Component {
       <View style={styleEmpire.container}>
           <Text style = {styleEmpire.headerFont}>Galactic Schedule</Text>                                                           
 
-          <Image style={{width: 200, height: 200}}  source = {require ('/StarWars_Football_Matches_UI/800px-Flag_of_the_First_Galactic_Empire.svg.png')}/>
+          <Image style={{width: 200, height: 200}}  source = {require ('./800px-Flag_of_the_First_Galactic_Empire.svg.png')}/>
           <Text style = {styleEmpire.headerFont1}>Emperor's World Cup</Text>   
-
-          <View style = {styleEmpire.bigMatch}> 
-              <View style = {styleEmpire.match} >
-                    <Text style = {styleEmpire.timer}> July 1st 4ABY </Text>
-                    <View style = {styleEmpire.teams} >
-                      <Text style = {styleEmpire.normalFont}> The Empire </Text>
-                      <Image style= {{width:20, height:20}} source = {require ('/StarWars_Football_Matches_UI/240px-Emblem_of_the_First_Galactic_Empire.svg.png')}/>
-                      
-                      <Image style= {{width:20, height:20}} source = {require ('/StarWars_Football_Matches_UI/Rebel_Alliance_logo.svg.png')}/>
-                      <Text style = {styleEmpire.normalFont}> Rebel Alliance </Text>
-                    </View>
-              </View>
-
-              
-
-
-
-            </View>
-           <View style = {styleEmpire.bigMatch}> 
-                    <View style = {styleEmpire.match} >
-                      <Text style = {styleEmpire.timer}> July 2st 4ABY </Text>
-                      <View style = {styleEmpire.teams} >
-                        <Text style = {styleEmpire.normalFont}> Darth Vader </Text>
-                        <Image style= {{width:20, height:20}} source = {require ('/StarWars_Football_Matches_UI/darth_vader_PNG14.png')}/>
-                        
-                        <Image style= {{width:20, height:20}} source = {require ('/StarWars_Football_Matches_UI/Darth_Sidious_Render.png')}/>
-                        <Text style = {styleEmpire.normalFont}> Darth Sidious </Text>
-                    </View>
-              </View>
-              </View>
+         
+           <SuperComponent time='July 1st 4ABY' name1 ='Darth Vader' source1 = {DarthVader} source2 = {DarthSidious} name2 = 'Darth Sidious'/> 
+       
       </View>
     );
   }
 }
+const DarthSidious = 
+	 require ('./Darth_Sidious_Render.png') 
+
+const DarthVader = 
+  require ('./darth_vader_PNG14.png')
+
 
 const styleEmpire = StyleSheet.create({
   container: {
@@ -79,6 +59,7 @@ const styleEmpire = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     borderRadius: 10,
+   
   }, 
   bigMatch:
   {
