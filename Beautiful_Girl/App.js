@@ -98,6 +98,7 @@ const stylist = StyleSheet.create({
     height: 40,
     backgroundColor: 'rgb(110,42,26)',
     color: 'white',
+    justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10
   },
