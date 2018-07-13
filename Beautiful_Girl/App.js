@@ -29,6 +29,8 @@ class Empire extends Component {
 
         <View style={stylist.back}>
           <Image source={{ uri: 'https://i.imgur.com/2arWHb0.png' }} style={stylist.cover} />
+
+          
           <TextInput
             style={stylist.input}
             editable={true}

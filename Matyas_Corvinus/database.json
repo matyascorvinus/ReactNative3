@@ -1,0 +1,50 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "title": "Electronic Arts",
+            "country": "Redwood City, California, United States of America",
+            "photos": [
+                "https://i.forbesimg.com/media/lists/companies/electronic-arts_416x416.jpg"
+            ],
+            "rate": 5,
+            "distance": "8,568 miles"
+            
+        },
+        {
+            "id": 2,
+            "title": "Activision Blizzard",
+            "country": "Santa Monica, California, United States of America", 	 
+            "photos": [
+                "https://cdn.wccftech.com/wp-content/uploads/2017/11/Activision-Blizzard-Q3-2017-01-Header.jpg"
+				
+            ],
+            "rate": 5,
+            "distance": "8,568 miles"
+            
+        },
+        {
+            "id": 3,
+            "title": "Steam Empire",
+            "country": "Nova Imperium Romanum",
+            "photos": [
+                "http://imageform.se/wp-content/uploads/2017/06/Steam-logo-black.jpg"
+			
+            ],
+            "rate": 5,
+            "distance": "8,568 miles"
+        },
+        {
+            "id": 4,
+            "title": "Imperium Romanum",
+            "country": "Nova Imperium Romanum",
+            "photos": [
+                "https://vignette.wikia.nocookie.net/althistory/images/1/1b/Roman_Imperial_Flag.png/revision/latest/scale-to-width-down/350?cb=20091213034900"
+			
+            ],
+            "rate": 5,
+            "distance": "In our heart"
+        }
+        
+    ]
+}
