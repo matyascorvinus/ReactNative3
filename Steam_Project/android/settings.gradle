@@ -1,0 +1,3 @@
+rootProject.name = 'Steam_Project'
+
+include ':app'

@@ -41,7 +41,7 @@ class Empire extends Component {
             onChangeText={(username) => this.setState({ username })}
 
           // onChangeText = {
-          //   function abc(username){
+          //   function abc(username){                       class BB  public BB(int x, int y)  BB(2,3)
           //     return this.setState({username})
           //   }
           // }

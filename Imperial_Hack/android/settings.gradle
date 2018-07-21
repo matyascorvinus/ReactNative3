@@ -1,0 +1,3 @@
+rootProject.name = 'Imperial_Hack'
+
+include ':app'
