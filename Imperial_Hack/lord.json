@@ -1,0 +1,192 @@
+{
+    "city": {
+        "id": 1581130,
+        "name": "Hanoi",
+        "coord": {
+            "lon": 105.8525,
+            "lat": 21.0292
+        },
+        "country": "VN",
+        "population": 1431270
+    },
+    "cod": "200",
+    "message": 0.9784822,
+    "cnt": 7,
+    "list": [
+        {
+            "dt": 1532149200,
+            "temp": {
+                "day": 300.15,
+                "min": 297.34,
+                "max": 300.15,
+                "night": 297.34,
+                "eve": 298.54,
+                "morn": 300.15
+            },
+            "pressure": 1004.34,
+            "humidity": 100,
+            "weather": [
+                {
+                    "id": 502,
+                    "main": "Rain",
+                    "description": "heavy intensity rain",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 3.11,
+            "deg": 332,
+            "clouds": 92,
+            "rain": 15.75
+        },
+        {
+            "dt": 1532235600,
+            "temp": {
+                "day": 305.04,
+                "min": 296.57,
+                "max": 305.94,
+                "night": 298.95,
+                "eve": 302.75,
+                "morn": 296.57
+            },
+            "pressure": 1004.09,
+            "humidity": 83,
+            "weather": [
+                {
+                    "id": 501,
+                    "main": "Rain",
+                    "description": "moderate rain",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 2.82,
+            "deg": 323,
+            "clouds": 36,
+            "rain": 9.99
+        },
+        {
+            "dt": 1532322000,
+            "temp": {
+                "day": 307.73,
+                "min": 300.08,
+                "max": 307.88,
+                "night": 300.08,
+                "eve": 304.78,
+                "morn": 301.03
+            },
+            "pressure": 1002.37,
+            "humidity": 78,
+            "weather": [
+                {
+                    "id": 500,
+                    "main": "Rain",
+                    "description": "light rain",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 2.21,
+            "deg": 307,
+            "clouds": 8,
+            "rain": 1.16
+        },
+        {
+            "dt": 1532408400,
+            "temp": {
+                "day": 301.31,
+                "min": 298.99,
+                "max": 304.11,
+                "night": 298.99,
+                "eve": 302.45,
+                "morn": 300.42
+            },
+            "pressure": 1004.63,
+            "humidity": 93,
+            "weather": [
+                {
+                    "id": 501,
+                    "main": "Rain",
+                    "description": "moderate rain",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 1.92,
+            "deg": 12,
+            "clouds": 56,
+            "rain": 8.92
+        },
+        {
+            "dt": 1532494800,
+            "temp": {
+                "day": 306.78,
+                "min": 300.49,
+                "max": 306.78,
+                "night": 300.49,
+                "eve": 303.5,
+                "morn": 301.32
+            },
+            "pressure": 1000.98,
+            "humidity": 0,
+            "weather": [
+                {
+                    "id": 501,
+                    "main": "Rain",
+                    "description": "moderate rain",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 1.13,
+            "deg": 318,
+            "clouds": 15,
+            "rain": 3.19
+        },
+        {
+            "dt": 1532581200,
+            "temp": {
+                "day": 306.84,
+                "min": 300.29,
+                "max": 306.84,
+                "night": 300.29,
+                "eve": 303.25,
+                "morn": 301.38
+            },
+            "pressure": 999.09,
+            "humidity": 0,
+            "weather": [
+                {
+                    "id": 501,
+                    "main": "Rain",
+                    "description": "moderate rain",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 1.95,
+            "deg": 258,
+            "clouds": 27,
+            "rain": 8.02
+        },
+        {
+            "dt": 1532667600,
+            "temp": {
+                "day": 303.82,
+                "min": 299.09,
+                "max": 303.82,
+                "night": 299.09,
+                "eve": 300.25,
+                "morn": 300.66
+            },
+            "pressure": 998.52,
+            "humidity": 0,
+            "weather": [
+                {
+                    "id": 502,
+                    "main": "Rain",
+                    "description": "heavy intensity rain",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 1.9,
+            "deg": 358,
+            "clouds": 12,
+            "rain": 39.38
+        }
+    ]
+}
