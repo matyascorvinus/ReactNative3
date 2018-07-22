@@ -17,6 +17,7 @@ import IconChoosing from './IconChoosing';
 class Screen extends Component {
     state = {
         city: 'budapest',
+        country: 'Hungary',
         minus: 0,
         text: '',
         data: null,
@@ -37,7 +38,8 @@ class Screen extends Component {
                 console.log(res.data);
                 this.setState({
                     city: res.data.city.name,
-                    data: res.data.list
+                    data: res.data.list,
+                    country: res.data.city.country,
                 })
             }).catch(error => {
                 this.setState({
@@ -62,9 +64,8 @@ class Screen extends Component {
 
         )
     }
-    tempConvert(temp1)
-    {
-        return this.state.minus > 10 ? 1.8*(temp1 - 273) + 32 : temp1 - 273;
+    tempConvert(temp1) {
+        return this.state.minus > 10 ? 1.8 * (temp1 - 273) + 32 : temp1 - 273;
     }
     convert = () => {
         this.setState({
@@ -121,39 +122,39 @@ class Screen extends Component {
                             alignItems: 'center',
                             justifyContent: 'center', width: Dimensions.get('screen').width - 10, height: 300, borderRadius: 10
                         }}>
-                            <View style={{ justifyContent: 'center', alignItems: 'center',  height: 100 }}>
-                                    <Text style={{ color: '#FFF', fontSize: 25, fontWeight: 'bold' }}>{this.state.city} </Text>
-                                    <Text style={{ color: '#FFF', fontSize: 18 }}>{moment().format('DD/MM/YYYY')}</Text>
-                                    <Text style={{ color: '#FFF', fontSize: 20 }}>{this.state.data[0].weather[0].description}</Text>
-                                    <IconChoosing weather={this.state.data[0].weather[0].main} style={{ width: 50, height: 50 }} />
-                                    <Text style={{ color: '#FFF', fontSize: 70 }}>{Math.floor(this.tempConvert(this.state.data[0].temp.max))}°</Text>
-                                    <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-                                        <TouchableOpacity onPress={this.convert}>
-                                            <Text style={{ color: this.state.minus > 10 ? 'red' : 'white', fontSize: 30 }}> F° </Text>
-                                        </TouchableOpacity>
-                                        <TouchableOpacity onPress={this.convert}>
-                                            <Text style={{ color: this.state.minus > 10 ? 'white' : 'red', fontSize: 30, marginLeft: '20%' }}>C°</Text>
-                                        </TouchableOpacity>
-                                    </View>
-                                    
-                                </View>
-                               
+                            <View style={{ justifyContent: 'center', alignItems: 'center', height: 100 }}>
+                                <Text style={{ color: '#FFF', fontSize: 25, fontWeight: 'bold' }}>{this.state.city} </Text>
+                                <Text style={{ color: '#FFF', fontSize: 25, fontWeight: 'bold' }}>{this.state.country} </Text>
+                                <Text style={{ color: '#FFF', fontSize: 18 }}>{moment().format('DD/MM/YYYY')}</Text>
 
-                            {/*  <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                                    
-                                </View>
-                                
-                                <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', flex: 1 }}>
-                                    <Text style={{ color: '#FFF', fontSize: 70 }}>{Math.floor(this.state.data[0].temp.max)}°</Text>
-                                    <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-                                        <TouchableOpacity >
-                                            <Text style={{ color: this.state.minus > 10 ? '#817E92' : 'white', fontSize: 30 }}> F° </Text>
-                                        </TouchableOpacity>
-                                        <TouchableOpacity >
-                                            <Text style={{ color: this.state.minus > 10 ? 'white' : '#817E92', fontSize: 30, marginLeft: '20%' }}>C°</Text>
-                                        </TouchableOpacity>
+                                <View style={{
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
+                                    justifyContent: 'center'
+                                }}>
+                                    <View style={{ justifyContent: 'space-between', alignItems: 'center', }} >
+                                        <IconChoosing weather={this.state.data[0].weather[0].main} style={{ width: 150, height: 150 }} />
+                                        <Text style={{ color: '#FFF', fontSize: 20 }}>{this.state.data[0].weather[0].description}</Text>
+                                    </View >
+
+
+                                    <View style={{ justifyContent: 'center', alignItems: 'center', }} >
+                                        <Text style={{ color: '#FFF', fontSize: 70 }}>{Math.floor(this.tempConvert(this.state.data[0].temp.max))}°</Text>
+                                        <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+                                            <TouchableOpacity onPress={this.convert}>
+                                                <Text style={{ color: this.state.minus > 10 ? 'red' : 'white', fontSize: 30 }}> F° </Text>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity onPress={this.convert}>
+                                                <Text style={{ color: this.state.minus > 10 ? 'white' : 'red', fontSize: 30, marginLeft: '20%' }}>C°</Text>
+                                            </TouchableOpacity>
+                                        </View>
                                     </View>
-                                </View> */}
+                                </View>
+
+                            </View>
+
+
+
 
                         </View>
                         <FlatList
@@ -163,7 +164,7 @@ class Screen extends Component {
                         />
                     </View>
                     :
-                    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                    <View style={{ width: Dimensions.get('screen').width - 10, height: 300, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0, 0, 0,0.5)' }}>
 
                         <Text style={{ color: 'white', fontSize: 30 }}> 404 not found</Text>
                     </View>
