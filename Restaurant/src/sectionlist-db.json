@@ -3,7 +3,7 @@
     {
       "id": 1,
       "category": "Hamburger",
-      "dishes": [
+      "data": [
         {
           "title": "Crispy onion rings cheese",
           "image": "https://i.pinimg.com/564x/33/18/33/33183365ca5ff7039f66d5c6eb5a1081.jpg",
@@ -19,7 +19,7 @@
     {
       "id": 2,
       "category": "Spagetti",
-      "dishes": [
+      "data": [
         {
           "title": "Carbonara",
           "image": "https://i.pinimg.com/564x/e0/3c/25/e03c256b37130ffa011b533f620780c6.jpg",

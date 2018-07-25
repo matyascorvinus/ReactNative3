@@ -8,8 +8,13 @@ class SectionCategory extends Component {
   state = {  }
   render() {
     return (
-        <View>
-            <Text>{this.props.category}</Text>
+        <View style={{
+            backgroundColor: 'rgba(255,255,255,0.5)',
+            flex: 1,
+            flexDirection:'row',alignItems:'center',justifyContent:'center'
+        }}>
+            <Text style={{fontSize:25,fontWeight:'bold',color:'black'}}>{this.props.category}</Text>
+            
         </View>
     );
   }

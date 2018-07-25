@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import SectionItem from './SectionItem';
 import SectionCategory from './SectionCategory';
-import {data} from './sectionlist-db.json'
+import {menu} from './sectionlist-db.json'
 
 class SectionScreen extends Component {
     state = {}
@@ -20,16 +20,14 @@ class SectionScreen extends Component {
     render() {
 
         return (
-            // <ImageBackground source={require('./Images/hungarian_turul_design_by_teamslinky-d4ylafh.jpg')}
-            //     style={{ width: Dimensions.get('screen').width, height: Dimensions.get('screen').height }}
-            // >
+           
                 <SectionList
                     renderItem={this.renderItem}
                     renderSectionHeader={this.renderSectionHeader}
-                    sections={data}
+                    sections={menu}
                     keyExtractor={(item) => item.id}
                 />
-            // </ImageBackground>
+           
         );
     }
 }
