@@ -1,0 +1,36 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "category": "Hamburger",
+      "dishes": [
+        {
+          "title": "Crispy onion rings cheese",
+          "image": "https://i.pinimg.com/564x/33/18/33/33183365ca5ff7039f66d5c6eb5a1081.jpg",
+          "rate": 4
+        },
+        {
+          "title": "Beef with hummus and fried onion",
+          "image": "https://i.pinimg.com/564x/a6/85/a3/a685a334f68ced9455e50363ee25b9dd.jpg",
+          "rate": 5          
+        }
+      ] 
+    },
+    {
+      "id": 2,
+      "category": "Spagetti",
+      "dishes": [
+        {
+          "title": "Carbonara",
+          "image": "https://i.pinimg.com/564x/e0/3c/25/e03c256b37130ffa011b533f620780c6.jpg",
+          "rate": 3
+        },
+        {
+          "title": "Gronsaker",
+          "image": "https://i.pinimg.com/564x/47/f4/ff/47f4ff004c0498e2c66a0104cb2f855d.jpg",
+          "rate": 5
+        }
+      ] 
+    }
+  ]
+}
