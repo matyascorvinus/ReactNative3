@@ -15,7 +15,7 @@ class AddTaskScreen extends Component {
   state = {
     date: moment(),
     time: moment().format('HH:mm'), isDateTimePickerVisible: false,
-    category:'',
+    category: '',
   }
 
   _showDateTimePicker = () => this.setState({ isDateTimePickerVisible: true });
@@ -33,7 +33,13 @@ class AddTaskScreen extends Component {
       date
     })
   }
+  renderItem = ({ item }) => <ChooseCategory
 
+    category={item.category}
+    onPress={() => {
+      this.setState({ category: item.category })
+    }}
+  />
   render() {
     return (
       <View style={styles.container}>
@@ -59,32 +65,26 @@ class AddTaskScreen extends Component {
           mode='time'
         />
         <FlatList
-            renderItem={({ item }) => <ChooseCategory
-             
-              category={item.category}
-              onPress={() => {
-                this.setState({ category: item.category })
-              }}
-            />}
-            data={[
-              {
-                'category': 'To Do'
-              },
-              {
-                'category': 'Personal'
-              },
-              {
-                'category': 'Birthday'
-              },
-              {
-                'category': 'Event'
-              },
-              {
-                'category': 'Shopping'
-              },
-            ]}
-            horizontal={true}
-/>
+          renderItem={this.renderItem}
+          data={[
+            {
+              'category': 'To Do'
+            },
+            {
+              'category': 'Personal'
+            },
+            {
+              'category': 'Birthday'
+            },
+            {
+              'category': 'Event'
+            },
+            {
+              'category': 'Shopping'
+            },
+          ]}
+          horizontal={true}
+        />
       </View>
     );
   }
