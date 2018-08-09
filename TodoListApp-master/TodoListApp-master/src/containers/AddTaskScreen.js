@@ -16,7 +16,9 @@ class AddTaskScreen extends Component {
   state = {
     selectedDate: getDateStringFromDate(new Date()),
     isTimePickerVisible: false,
-    time: new Date().toTimeString().substring(0, 5)
+    time: new Date().toTimeString().substring(0, 5),
+    dayID: Math.floor(new Date().getTime()/(86400*1000)),
+    timeID: new Date().getTime(),
   }
 
   componentDidMount(){
@@ -24,13 +26,13 @@ class AddTaskScreen extends Component {
   }
   handleAddTask= () =>{
     this.props.addTask({
-      id: 1234,
-      date: 'Junvu2vn',
+      id: this.state.dayID,
+      date: this.state.selectedDate,
       task:{
-        id:12345,
-        category: 'To do',
-        content: 'Xuat khau lao dong',
-        time: '09:00',
+        id:this.state.timeID,
+        category: this.props.category,
+        content: this.state.content,
+        time: this.state.time,
         completed: false
       }
     })
@@ -39,7 +41,8 @@ class AddTaskScreen extends Component {
   onDateSelected = (date) => {
     //log date ra de xem cau truc
     this.setState({
-      selectedDate: getDateStringFromDate(date._d)
+      selectedDate: getDateStringFromDate(date._d),
+      dayID: Math.floor(date._d.getTime()/(86400*1000)),
     })
   }
 
@@ -49,7 +52,8 @@ class AddTaskScreen extends Component {
 
   handleTimePicked = (time) => {
     this.setState({
-      time: time.toTimeString().substring(0, 5)
+      time: time.toTimeString().substring(0, 5),
+      timeID: time.getTime(),
     });
     this.hideTimePicker();
   };
@@ -67,7 +71,7 @@ class AddTaskScreen extends Component {
         <ItemDate date={this.state.selectedDate} />
         <Text style={styles.title}>Content</Text>
         <TextInput style={styles.input} underlineColorAndroid={'rgba(0,0,0,0)'}
-          onChangeText={(content) => this.setState({ content })} />
+          onChangeText={(content) => this.setState({ content })} />   
         <Text style={styles.title}>Time</Text>
         <TouchableOpacity onPress={this.showTimePicker}>
           <Text style={styles.time}>{this.state.time}</Text>
@@ -113,4 +117,5 @@ const styles = StyleSheet.create({
   }
 });
 
-export default connect(null,{addTask}) (AddTaskScreen);
+const mapStateToProps =({category}) =>({category});
+export default connect(mapStateToProps,{addTask}) (AddTaskScreen);

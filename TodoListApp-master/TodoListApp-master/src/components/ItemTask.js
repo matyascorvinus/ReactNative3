@@ -7,20 +7,28 @@ import RoundCheckbox from 'rn-round-checkbox';
 
 import { gray, white, calendarHighlight } from '../styles'
 import { chooseColorByCategory } from '../utils'
-
+import {connect} from 'react-redux';
+import {toggleTask} from '../actions'
 class ItemTask extends Component {
   state = {
-    taskDone: false
+    taskDone: this.props.task.completed
   }
 
-  toogleTask = newValue => this.setState({ taskDone: newValue })
+  toggleTask = newValue => {
+    this.setState({ taskDone: newValue })
+    this.props.toggleTask({
+      dayId: this.props.dayId,
+      timeId: this.props.task.id,
+    })
+  }
+
 
   render() {
     return (
       <View style={styles.container}>
         <RoundCheckbox
           checked={this.state.taskDone}
-          onValueChange={this.toogleTask}
+          onValueChange={this.toggleTask}
           backgroundColor={calendarHighlight}
         />
         <Text style={styles.time}>{this.props.task.time}</Text>
@@ -65,4 +73,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default ItemTask;
+export default connect(null,{toggleTask})(ItemTask);

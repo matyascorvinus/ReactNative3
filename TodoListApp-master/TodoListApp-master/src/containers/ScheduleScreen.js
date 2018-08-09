@@ -16,7 +16,7 @@ class ScheduleScreen extends Component {
   state = {
   }
 
-  renderItem = ({item}) => <ItemTask task={item}/>
+  renderItem = ({item ,section: { id }}) => <ItemTask task={item} dayId ={id}/>
 
   renderSectionHeader = ({section: { date }}) => <ItemDate date={date}/>
 
