@@ -63,6 +63,7 @@ class Length extends Component {
         />
     );
     render() {
+
         console.log(this.props.PressChanger)
         console.log(this.props.LeftText)
         console.log(this.props.RightText)
@@ -72,9 +73,9 @@ class Length extends Component {
                 <View style={{ flex: 0.5 }}>
                     <TextInput
                         autoCorrect={false}
-                        value={String(
-                            this.props.PressChanger.left / this.props.PressChanger.right * this.props.RightText
-                        )}
+                        // value={String(
+                        //     this.props.PressChanger.left / this.props.PressChanger.right * this.props.RightText
+                        // )}
                         onChangeText={(text) => this.props.onLeftText(text)} />
                     <FlatList
                         data={data}
@@ -85,10 +86,11 @@ class Length extends Component {
                 <View style={{ flex: 0.5 }}>
                     <TextInput
                         autoCorrect={false}
+
+                        onChangeText={(text) => this.props.onRightText(text)}
                         value={String(
                             this.props.PressChanger.left / this.props.PressChanger.right * this.props.LeftText
-                        )}
-                        onChangeText={(text) => this.props.onRightText(text)} />
+                        )} />
                     <FlatList
                         data={data}
                         renderItem={this.renderItemRight}
