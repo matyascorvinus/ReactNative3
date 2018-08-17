@@ -8,7 +8,9 @@ import RoundCheckbox from 'rn-round-checkbox';
 import { gray, white, calendarHighlight } from '../styles'
 import { chooseColorByCategory } from '../utils'
 import {connect} from 'react-redux';
-import {toggleTask} from '../actions'
+import {toggleTask,delTask} from '../actions';
+
+
 class ItemTask extends Component {
   state = {
     taskDone: this.props.task.completed
@@ -22,7 +24,12 @@ class ItemTask extends Component {
     })
   }
 
-
+  delTask=()=>{
+    this.props.delTask({
+      id: this.props.dayId,
+      timeId: this.props.task.id,
+    })
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -32,7 +39,7 @@ class ItemTask extends Component {
           backgroundColor={calendarHighlight}
         />
         <Text style={styles.time}>{this.props.task.time}</Text>
-        <TouchableOpacity
+        <TouchableOpacity onLongPress={this.delTask}
           style={[{ backgroundColor: chooseColorByCategory(this.props.task.category) }, styles.task]}>
           <Text style={styles.content}>{this.props.task.content}</Text>
           <Text style={styles.category}>{this.props.task.category}</Text>
@@ -73,4 +80,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default connect(null,{toggleTask})(ItemTask);
+export default connect(null,{toggleTask,delTask})(ItemTask);

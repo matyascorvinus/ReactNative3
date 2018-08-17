@@ -1,6 +1,7 @@
-import { ADD_TASK, TOGGLE_TASK } from '../actions/type';
+import { ADD_TASK, TOGGLE_TASK, DEL_TASK } from '../actions/type';
 
 export default function (state = [], action) {
+    const tasksInThisDay = state.filter(item => item.id === action.payload.id)
     switch (action.type) {
         case (ADD_TASK):
             {
@@ -8,7 +9,7 @@ export default function (state = [], action) {
                 //2. add task
                 //3. sort
 
-                const tasksInThisDay = state.filter(item => item.id === action.payload.id)
+                
                 if (tasksInThisDay.length === 0) {
                     return [
                         ...state, {
@@ -46,6 +47,15 @@ export default function (state = [], action) {
                         :task
             )
                 } : dayTask)
+
         default: return state;
+        case DEL_TASK: return tasksInThisDay[0].data.length===1?state.filter(item=>item.id!==action.payload.id):[
+            ...(state.filter(item =>item.id!== action.payload.id)),
+            {
+                id:tasksInThisDay[0].id,
+                date:tasksInThisDay[0].date,
+                data:tasksInThisDay[0].data.filter(task=>task.id!==action.payload.timeId)
+            }
+        ].sort((day1, day2) => day1.id - day2.id)
     }
 }

@@ -1,0 +1,3 @@
+rootProject.name = 'darthfirebase'
+
+include ':app'

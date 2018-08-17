@@ -1,4 +1,4 @@
- import {CHOOSE_CATEGORY, ADD_TASK,TOGGLE_TASK} from './type';
+ import {CHOOSE_CATEGORY, ADD_TASK,TOGGLE_TASK,DEL_TASK} from './type';
 
  export const chooseCategory =(category) =>({
      type: CHOOSE_CATEGORY,
@@ -14,3 +14,4 @@
      type: TOGGLE_TASK,
      payload: data,
  })
+ export const delTask =(data)=>({type:DEL_TASK,payload:data})
