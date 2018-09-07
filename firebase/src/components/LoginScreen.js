@@ -12,11 +12,21 @@ class LoginScreen extends Component {
     isSigningIn:false,
     isSigningUp:false,
   }
+
+  onPushDatatoFirebase =(user)=>{firebase.database().ref('/users').child(user.uid).set({
+    displayName:'',
+    phoneNumber:'',
+    address:''
+  })}
 onSignIn=()=>{
   this.setState({isSigningIn:true})
   const email =this.state.email;
   const password = this.state.password;
-  firebase.auth().signInAndRetrieveDataWithEmailAndPassword(email,password).then(res =>this.setState({isSigningIn:false}))
+  firebase.auth().signInAndRetrieveDataWithEmailAndPassword(email,password)
+  .then(res =>{
+    this.setState({isSigningIn:false})
+    this.props.navigation.navigate('HomeScreen')
+  })
   .catch(err=>this.setState({error:err.toString(),password:'',isSigningIn:false}))
 }
 
@@ -25,7 +35,12 @@ onSignIn=()=>{
     this.setState({isSigningUp:true})
     const email =this.state.email;
     const password = this.state.password;
-    firebase.auth().createUserAndRetrieveDataWithEmailAndPassword(email,password).then(res =>this.setState({isSigningUp:false}))
+    firebase.auth().createUserAndRetrieveDataWithEmailAndPassword(email,password)
+    .then(res =>{
+      this.setState({isSigningUp:false})
+      this.onPushDatatoFirebase(res.user._user)
+      this.props.navigation.navigate('HomeScreen')
+    })
     .catch(err=>this.setState({error:err.toString(),password:'',isSigningUp:false}))
   }
   render() {
@@ -93,7 +108,7 @@ const styles = StyleSheet.create({
     marginTop: 15
   },
   button: {
-    borderRadius: 10,
+    borderRadius: 30,
     height: 40,
     width: 100,
     justifyContent: 'center',

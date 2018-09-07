@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "352285820601",
+    "firebase_url": "https://deusimperator-e9d95.firebaseio.com",
+    "project_id": "deusimperator-e9d95",
+    "storage_bucket": "deusimperator-e9d95.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352285820601:android:5c6351130108f772",
+        "android_client_info": {
+          "package_name": "com.deusimperator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352285820601-tr3m6nie0kjdoh7jsdbjjmjgbnib0042.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.deusimperator",
+            "certificate_hash": "1e5b30939a2030fbffcfbe37c7c6e85bc1b44037"
+          }
+        },
+        {
+          "client_id": "352285820601-rqgqkn2cg65mtllp1n9r06nq5ul72irf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqMCJPU-YX4GI4NO-MWmEXzzNUTynzsLU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352285820601-rqgqkn2cg65mtllp1n9r06nq5ul72irf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,12 +3,14 @@ import {
   Text,
   View,
 } from 'react-native';
-
+import { commonStyles } from '../styles';
 class TabHistory extends Component {
   state = {  }
   render() {
     return (
-        <Text></Text>
+      <View style={commonStyles.container}>
+      <Text style={commonStyles.fontTitleScreen}>History</Text>
+      </View>
     );
   }
 }

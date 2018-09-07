@@ -5,8 +5,14 @@ import {
   KeyboardAvoidingView,ActivityIndicator,
 } from 'react-native';
 import { backgroundColor, primaryColorBrown, primaryColorRed, primaryColorGreen } from '../styles';
+import firebase, { Firebase } from 'react-native-firebase';
 class Splash extends Component {
     state = {}
+    componentDidMount(){
+        
+        firebase.auth().onAuthStateChanged(res => res !== null ? setTimeout(()=>this.props.navigation.navigate('HomeScreen'),2000)
+        :setTimeout(()=>this.props.navigation.navigate('LoginScreen')),2000)
+    }
     render() {
         return (
             <View style={styles.container}><Image source={require('../assets/logo_app.jpg')}
