@@ -3,15 +3,6 @@ import {
   Text,
   View, StyleSheet, Image
 } from 'react-native';
-
-
-import Splash from './Splash';
-import LoginScreen from './LoginScreen'
-import { createBottomTabNavigator, createSwitchNavigator } from 'react-navigation';
-import TabMenu from './TabMenu';
-import TabOrder from './TabOrder';
-import TabHistory from './TabHistory';
-import TabInfo from './TabInfo';
 import { primaryColorGreen, backgroundColor, primaryColorRed } from '../styles'
 
 import Icon from 'react-native-vector-icons/FontAwesome';

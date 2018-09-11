@@ -48,7 +48,7 @@ onSignIn=()=>{
       <KeyboardAvoidingView style={styles.container}
         behavior={Platform.OS === 'ios' ? 'padding' : null}
         enabled>
-        <Image source={require('../assets/logo_app.jpg')}
+        <Image source={require('../Images/Wallpaper.jpg')}
           style={{ width: '100%', height: Dimensions.get('screen').width - 60 }}
           resizeMode='contain'
         />
@@ -62,7 +62,7 @@ onSignIn=()=>{
           <Image style={styles.icon} source={require('../assets/ic_password.png')} />
           <Text style={styles.title}>Password</Text>
         </View>
-        <TextInput style={styles.inputField} onChangeText={(password) => this.setState({ password })} value={this.state.password} underlineColorAndroid='rgba(0,0,0,0)' />
+        <TextInput secureTextEntry={true} style={styles.inputField} onChangeText={(password) => this.setState({ password })} value={this.state.password} underlineColorAndroid='rgba(0,0,0,0)' />
         <Text style={styles.textError}>{this.state.error}</Text>
         <View style={[styles.row, { justifyContent: 'center' }]}>
           <TouchableOpacity style={[styles.button, { backgroundColor: primaryColorGreen }]} onPress={this.onSignIn}>

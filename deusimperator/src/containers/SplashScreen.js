@@ -10,7 +10,7 @@ class Splash extends Component {
     state = {}
     componentDidMount(){
         
-        firebase.auth().onAuthStateChanged(res => res !== null ? setTimeout(()=>this.props.navigation.navigate('Photo'),2000)
+        firebase.auth().onAuthStateChanged(res => res !== null ? setTimeout(()=>this.props.navigation.navigate('HomeScreen'),2000)
         :setTimeout(()=>this.props.navigation.navigate('LoginScreen')),2000)
     }
     render() {
