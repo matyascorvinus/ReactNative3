@@ -48,7 +48,7 @@ onSignIn=()=>{
       <KeyboardAvoidingView style={styles.container}
         behavior={Platform.OS === 'ios' ? 'padding' : null}
         enabled>
-        <Image source={require('../assets/logo_app.jpg')}
+        <Image source={require('../Images/Wallpaper.jpg')}
           style={{ width: '100%', height: Dimensions.get('screen').width - 60 }}
           resizeMode='contain'
         />
